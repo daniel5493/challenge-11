@@ -3,7 +3,8 @@ const path = require('path');
 const PORT = process.env.PORT || 3001;
 const app = express();
 const notes = require('./db/db.json')
-const fs = require ('fs')
+const fs = require ('fs');
+const { Console } = require('console');
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -40,4 +41,4 @@ res.json(notes)
 })
 
 
-
+app.listen(PORT,()=>console.log("NOW LISTENING"))
